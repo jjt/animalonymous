@@ -1,0 +1,19 @@
+{
+  "name": "animalonymous",
+  "version": "0.0.1",
+  "description": "Hashes input string to output of form \"[adjective] [animal]\"",
+  "keywords": [],
+  "author": "jason@jasontrill.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jjt/animalonymous.git"
+  },
+  "dependencies": {
+    "node_hash": "~0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "main": "index"
+}
