@@ -1,6 +1,6 @@
 {
   "name": "animalonymous",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Hashes input string to output of form \"[adjective] [animal]\"",
   "keywords": [],
   "author": "jason@jasontrill.com",
