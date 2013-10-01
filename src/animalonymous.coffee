@@ -7,15 +7,25 @@ upperFirst = (str) ->
   return str if str == ''
   str.charAt(0).toUpperCase() + str.slice(1)
 
-# Uses 8-character pieces of the md5 hash of input and modulo divides it by
-# animals.length and adjectives.length (respectively) to get a combined name
-# ex "Wiggly Muskox"
+# Takes an array, an integer and its range (max/min) and returns an element
+# from the array corresponding to the integer's positon in the range
+getArrayElFromInt = (arr, int, intmax = Math.pow(2,32), intmin = 0) ->
+  ratio = int / (intmax - intmin)
+  index = Math.floor ratio * arr.length
+  arr[index]
+
 hash = (input) ->
+  # Get md5 of input
   inputHash = nodeHash.md5 input
-  animalHashInt = parseInt inputHash.substr(0,8), 16
-  adjectiveHashInt = parseInt inputHash.substr(8,8), 16
-  animal = animals[animalHashInt % animals.length]
-  adjective = adjectives[adjectiveHashInt % adjectives.length]
+
+  # Convert 8-byte hex chunks into 32-bit ints
+  animalsHashInt = parseInt inputHash.substr(0,8), 16
+  adjectivesHashInt = parseInt inputHash.substr(8,8), 16
+
+  # Get the array elements corresponding to the converted integers
+  animal = getArrayElFromInt animals, animalsHashInt
+  adjective = getArrayElFromInt adjectives, adjectivesHashInt
+
   out = upperFirst(adjective) + " " + upperFirst(animal)
 
 module.exports = hash
