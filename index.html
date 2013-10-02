@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Animalonymous by jjt</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Animalonymous</h1>
+        <p>A node module that maps input strings (ex. user email) to strings of form &quot;[adjective] [animal]&quot;</p>
+        <p class="view"><a href="https://github.com/jjt/animalonymous">View the Project on GitHub <small>jjt/animalonymous</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jjt/animalonymous/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jjt/animalonymous/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jjt/animalonymous">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="animalonymous" class="anchor" href="#animalonymous"><span class="octicon octicon-link"></span></a>animalonymous</h1>
+
+<p>An npm module that takes input strings and hashes them to output strings of the form "[adjective]
+[animal]". Intended to provide (semi)-anonymous, (semi-)persistent usernames.</p>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>$&gt; npm install --save animalonymous
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h2>
+
+<pre><code>var input = 'test@animalonymous.com',
+    output = require('animalonymous')(input);
+
+console.log("Input: " + input + ", Output: " + output);
+// -&gt; "Input: test@animalonymous.com, Output: Upset Camel"
+</code></pre>
+
+<h2>
+<a name="details" class="anchor" href="#details"><span class="octicon octicon-link"></span></a>Details</h2>
+
+<p>We have two source arrays comprised of 591 animals and 1344 adjectives which get
+combined for a total of 794,304 unique outputs.
+The main function in <code>animalonymous</code> takes an md5 hash of the input, then
+converts the first 8 bytes to a 32-bit integer for selecting the animals, and
+then the next 8 bytes of the hash to a 32-bit integer for the adjectives. It
+then takes these integers and determines indexes for each array by <code>floor( (int
+/ 2^32) * len )</code>. It then returns <code>animals[animalsIndex] + " "
++adjectives[adjectivesIndex]</code>.</p>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2013 <a href="mailto:jason@jasontrill.com">jason@jasontrill.com</a> ;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/jjt">jjt</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
