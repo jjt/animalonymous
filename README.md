@@ -10,10 +10,27 @@ Takes input strings and hashes them to output strings of the form "[adjective]
 ### Usage:
 ```
 var input = 'test@animalonymous.com',
-    output = require('animalonymous')(input);
+    anml = require('../'),
+    salt = "saltysalt111",
+    results = [
+      "input: " + input,
+      "hash(input): [" + anml.hash(input) + "]",
+      "hash(input, \"saltysalt111\"): [" + anml.hash(input, salt) + "]",
+      "hashStr(input): " + anml.hashStr(input),
+      "random(): [" + anml.random() + "]",
+      "randomStr(): " + anml.randomStr()
+    ];
 
-console.log("Input: " + input + ", Output: " + output);
-// -> "Input: test@animalonymous.com, Output: Upset Camel"
+console.log(results.join("\n"));
+
+// Console Output
+// input: test@animalonymous.com
+// hash(input): [Upset,Camel]
+// hash(input, "saltysalt111"): [Cheap,Wildebeest]
+// hashStr(input): Upset Camel
+// random(): [Moist,Salamander]
+// randomStr(): Cultured Galapagos Tortoise
+
 ```
 
 ### Details

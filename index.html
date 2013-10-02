@@ -53,11 +53,28 @@
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<pre><code>var input = 'test@animalonymous.com',
-    output = require('animalonymous')(input);
+<pre><code>
+var input = 'test@animalonymous.com',
+    anml = require('../'),
+    salt = "saltysalt111",
+    results = [
+      "input: " + input,
+      "hash(input): [" + anml.hash(input) + "]",
+      "hash(input, \"saltysalt111\"): [" + anml.hash(input, salt) + "]",
+      "hashStr(input): " + anml.hashStr(input),
+      "random(): [" + anml.random() + "]",
+      "randomStr(): " + anml.randomStr()
+    ];
 
-console.log("Input: " + input + ", Output: " + output);
-// -&gt; "Input: test@animalonymous.com, Output: Upset Camel"
+console.log(results.join("\n"));
+
+// Console Output
+// input: test@animalonymous.com
+// hash(input): [Upset,Camel]
+// hash(input, "saltysalt111"): [Cheap,Wildebeest]
+// hashStr(input): Upset Camel
+// random(): [Moist,Salamander]
+// randomStr(): Cultured Galapagos Tortoise
 </code></pre>
 
 <h2>
