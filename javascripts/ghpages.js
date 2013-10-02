@@ -4,6 +4,7 @@ var inputForm = document.getElementById('example'),
 
 inputForm.addEventListener('submit', function(event) {
   output.innerHTML = animalonymous(input.value);
+  window.location.hash = input.value;
   event.preventDefault();
   return false; 
 }, false);
