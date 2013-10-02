@@ -1,4 +1,15 @@
 var input = 'test@animalonymous.com',
-    output = require('../')(input);
+    anml = require('../'),
+    salt = "saltysalt111",
+    results = [
+      "Input: " + input,
+      "hash(input): [" + anml.hash(input) + "]",
+      "hash(input, \"saltysalt111\"): [" + anml.hash(input, salt) + "]",
+      "hashStr(input): " + anml.hashStr(input),
+      "random(): [" + anml.random() + "]",
+      "randomStr(): " + anml.randomStr()
+    ];
 
-console.log("Input: " + input + ", Output: " + output);
+
+
+console.log(results.join("\n"));

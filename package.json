@@ -1,7 +1,7 @@
 {
   "name": "animalonymous",
-  "version": "0.1.2",
-  "description": "Hashes input string to output of form \"[adjective] [animal]\"",
+  "version": "0.2.0",
+  "description": "Makes [<adjective>,<animal>] pairs/strings from input hash, or by random",
   "keywords": [],
   "author": "jason@jasontrill.com",
   "repository": {
