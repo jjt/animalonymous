@@ -1,8 +1,6 @@
 md5 = require('./md5').md5
 animals = require('./animals').long
-adjectives = require './adjectives'
-
-console.log md5
+adjectives = require('./adjectives')
 
 upperFirst = (str) ->
   return str if str == ''

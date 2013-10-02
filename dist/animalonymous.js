@@ -298,8 +298,6 @@ animals = require('./animals').long;
 
 adjectives = require('./adjectives');
 
-console.log(md5);
-
 upperFirst = function(str) {
   if (str === '') {
     return str;
