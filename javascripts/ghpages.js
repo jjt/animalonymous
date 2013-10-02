@@ -8,3 +8,8 @@ inputForm.addEventListener('submit', function(event) {
   return false; 
 }, false);
 
+var wlh = window.location.hash;
+if(wlh) {
+  input.value = wlh.substr(1,wlh.length);
+  output.innerHTML = animalonymous(input.value);
+}
