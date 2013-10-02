@@ -1,7 +1,8 @@
-nodeHash = require 'node_hash'
-
+md5 = require('./md5').md5
 animals = require('./animals').long
 adjectives = require './adjectives'
+
+console.log md5
 
 upperFirst = (str) ->
   return str if str == ''
@@ -16,7 +17,7 @@ getArrayElFromInt = (arr, int, intmax = Math.pow(2,32), intmin = 0) ->
 
 hash = (input) ->
   # Get md5 of input
-  inputHash = nodeHash.md5 input
+  inputHash = md5 input
 
   # Convert 8-byte hex chunks into 32-bit ints
   animalsHashInt = parseInt inputHash.substr(0,8), 16
