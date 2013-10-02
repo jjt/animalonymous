@@ -58,8 +58,8 @@ The main function in <code>animalonymous</code> takes an md5 hash of the input, 
 converts the first 8 bytes to a 32-bit integer for selecting the animals, and
 then the next 8 bytes of the hash to a 32-bit integer for the adjectives. It
 then takes these integers and determines indexes for each array by <code>floor( (int
-/ 2^32) * len )</code>. It then returns <code>animals[animalsIndex] + " "
-+adjectives[adjectivesIndex]</code>.</p>
+/ 2^32) * len )</code>. It then returns <code>adjectives[adjectivesIndex] + " "
++ animals[animalsIndex]</code>.</p>
 
 <h3>
 <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
@@ -94,5 +94,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
+    <script src="lib/animalonymous-browser.js"></script>
   </body>
 </html>
