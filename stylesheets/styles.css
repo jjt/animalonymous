@@ -354,3 +354,22 @@ footer p + p {
     content: 'at http://github.com/';
   }
 }
+
+
+#example {
+  margin-bottom: 12px;
+}
+
+#exampleOutput {
+  min-height:1em;
+  line-height: 1;
+}
+
+.big {
+  font-size:36px;
+}
+
+.huge {
+  font-size:52px;
+}
+
